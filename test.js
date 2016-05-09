@@ -1,11 +1,17 @@
 var test = require('tape')
 var threadable = require('./index')
+var supported = require('./supported')
 
 var add = threadable(function (a, b) {
   if (isNaN(a) || isNaN(b)) {
     throw new Error('Both arguments must be numbers')
   }
   return a + b
+})
+
+test('it is supported', function (assert) {
+  assert.plan(1)
+  assert.equal(supported, true)
 })
 
 test('it uses node-style callbacks', function (assert) {
