@@ -1,0 +1,37 @@
+{
+  "name": "threadable",
+  "version": "0.0.0",
+  "description": "run functions inside a web worker",
+  "main": "index.js",
+  "dependencies": {
+    "sliced": "~1.0.1",
+    "threadify": "~0.2.0"
+  },
+  "devDependencies": {
+    "tape": "~4.5.1",
+    "testling": "~1.7.1"
+  },
+  "scripts": {
+    "test": "testling -u"
+  },
+  "testling": {
+    "files": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:michaelrhodes/threadable"
+  },
+  "keywords": [
+    "web",
+    "worker",
+    "thread",
+    "callback",
+    "threadify"
+  ],
+  "author": "Michael Rhodes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaelrhodes/threadable/issues"
+  },
+  "homepage": "https://github.com/michaelrhodes/threadable"
+}
