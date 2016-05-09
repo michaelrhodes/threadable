@@ -55,3 +55,18 @@ test('it reports remote termination', function (assert) {
     assert.equal(typeof result, 'undefined')
   })
 })
+
+test('it passes multiple arguments', function (assert) {
+  assert.plan(4)
+
+  var multi = threadable(function () {
+    this.return(1, 2, 3)
+  })
+
+  multi(function (err, one, two, three) {
+    assert.equal(err, null)
+    assert.equal(one, 1)
+    assert.equal(two, 2)
+    assert.equal(three, 3)
+  })
+})

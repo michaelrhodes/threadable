@@ -23,9 +23,11 @@ module.exports = function (fn) {
       kill: terminate
     }
 
-    function ondone (value) {
+    function ondone () {
       if (complete) return
-      callback(null, value)
+      var args = slice(arguments)
+      args.unshift(null)
+      callback.apply(null, args)
       complete = true
     }
 
